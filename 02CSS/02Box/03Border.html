@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        width:300px;height:300px;margin:30px;border:1px solid;
+    }
+
+    .d1{
+        border-top: 2px solid red;
+        border-right: 3px dashed orange;
+        border-bottom: 4px dotted blue;
+        border-left: 5px double green;
+    }
+    /* 테두리깍기 */
+    .d2{
+        /* border-radius: 50%; */
+        /* border-radius: 10px; */
+        /* border-radius: 10px(왼쪽위, 오른쪽 밑) 50px(오른쪽 위, 왼쪽 밑); */
+
+        /* border-radius: 10px(왼쪽 위) 50px(오른쪽 위) 80px;(오른쪽 밑) 왼쪽밑은 설정안해서 오른쪽위와 대칭 시계방향 */
+    }
+
+    /* 삼각형만들기 */
+    /* transparent 투명 */
+    .d3{
+        border-top: 20px solid transparent;
+        border-right: 20px solid blue;
+        border-bottom: 20px solid blue;
+        border-left: 20px solid transparent;
+        width: 0px;
+        height: 0px;
+    }
+
+    /* 종이접기 */
+    .d4{
+        position: relative;
+        border: 1px solid blue;
+    }
+
+    .d4::after{
+        content: '';
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        /* 위에서 만든 삼각형 */
+         border-top: 20px solid white;
+        border-right: 20px solid blue;
+        border-bottom: 20px solid blue;
+        border-left: 20px solid white;
+        width: 0px;
+        height: 0px;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class = "d1"></div>
+    <div class = "d2"></div>
+    <div class = "d3"></div>
+    <div class = "d4"></div>
+    
+
+</body>
+</html>
