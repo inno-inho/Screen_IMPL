@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* common */
+        *{box-sizing: border-box;}
+        ul{padding: 0; margin: 0; list-style: none;}
+        a{text-decoration: none; color: black;}
+        body{margin: 0; padding: 0;}
+
+        /* main page */
+
+        /* header */
+        .wrapper{}
+        .wrapper>header{}
+        .wrapper>header>.top-header{}
+        .wrapper>header>nav{
+            /* border: 1px solid; */
+            height: 50px;
+        }
+
+        /* nav's menu */
+        .wrapper>header>nav>ul.main-menu{
+            display: flex;
+            /* 가로로 간격을 균일하게 배치 */
+            justify-content: space-between;
+            /* 가로배치 */
+            flex-direction: column;
+            height: 100%;
+            background-color: orange;
+            position: relative;
+        }
+        .wrapper>header>nav>ul.main-menu>li{
+            /* border: 1px solid; */
+            height: 100%;
+            padding: 0 20px;
+            background-color: royalblue;
+            width: 150px;
+            /* ! */
+            
+        }
+        .wrapper>header>nav>ul.main-menu>li>a{
+            /* 리스트 안에 있는 a태그는 블럭으로 맞추면 나머지는 다 나감*/
+            display: block;
+            height: 100%;
+            line-height: 50px;
+            color: white;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu{
+            /* border: 1px solid; */
+            width: 100%;
+            height: 100%;
+            max-width: 170px;
+            /* ! */
+            position: absolute;
+            left: 150px;
+            top: 0;
+            display: none;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu>li{
+            background-color: green;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu>li>a{
+            display: block;
+        }
+
+        /* 메인메뉴의 리스트에 마우스를 갖다대면 서브메뉴가 나오게 하겠다 */
+        .wrapper>header>nav>ul.main-menu>li:hover>.sub-menu{
+            display: block;
+        }
+
+        /* main */
+        .wrapper>main{}
+        .wrapper>main>section{}
+
+        /* footer */
+        .wrapper>footer{}
+    </style>
+</head>
+<body>
+    
+    <!-- .wrapper>header>.top-header+nav^main>section^footer -->
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+                <!-- ul.main-menu>li*4>a[href="javascript:void(0)"]{$_MAINMENU}+ul.sub-menu>li*5>a[href="javascript:void(0)"]{$_SUBNMENU} -->
+                <ul class="main-menu">
+                    <li>
+                        <a href="javascript:void(0)">1_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">2_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">3_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">4_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">5_SUBNMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">2_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">11_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">22_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">33_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">44_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">55_SUBNMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">3_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">111_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">222_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">333_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">444_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">555_SUBNMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">4_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1111_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">2222_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">3333_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">4444_SUBNMENU</a></li>
+                            <li><a href="javascript:void(0)">5555_SUBNMENU</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

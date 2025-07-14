@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* common */
+        *{box-sizing: border-box;}
+        ul{padding: 0; margin: 0; list-style: none;}
+        a{text-decoration: none; color: black;}
+        body{margin: 0; padding: 0;}
+
+        /* main page */
+
+        /* header */
+        .warpper{}
+        .wrapper>header{}
+        .wrapper>header>.top-header{}
+        .wrapper>header>nav{
+            border: 1px solid;
+            height: 45px;
+        }
+
+        /* nav's menu */
+        .wrapper>header>nav>ul.main-menu{
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            background-color: aquamarine;
+        }
+        .wrapper>header>nav>ul.main-menu>li{
+            height: 100%;
+            padding: 0 20px;
+            background-color: white;
+
+        }
+        .wrapper>header>nav>ul.main-menu>li>a{
+            display: block;
+            background-color: orange;
+            height: 100%;
+            font-size: 10px;
+            line-height: 50px;
+            width: 100px;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu{
+            border: 1px solid;
+            position: absolute;
+            /* left: 0; */
+            top: 45px;
+            display: none;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu>li{
+            background-color: green;
+            height: 20px;
+            line-height: 20px;
+            padding: 0 10px;
+        }
+        .wrapper>header>nav>ul.main-menu>li>ul.sub-menu>li>a{
+            display: block;
+        }
+        .wrapper>header>nav>ul.main-menu>li:hover>sub.menu{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+                <ul class="main-menu">
+                    <li>
+                        <a href="javascript:void(0)">ALL</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">BESTu</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">충무공 이순신 시리즈</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">꿈의 신소재 그래픽원단</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">친환경 소로나 원단</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">라스트 사이즈</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">PACKAGE</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">신발</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">의류</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">KIDS</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">용품</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">마스크</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">COLLABORATION</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">14_main-menu</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">2_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">3_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">4_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">5_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">6_sub-menu</a></li>
+                            <li><a href="javascript:void(0)">7_sub-menu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
