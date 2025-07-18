@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width:100px; height: 50px; margin: 10px; background-color: orange;}
+        div:hover{
+            width: 500px;
+        }
+        
+        /* transition : 동작이 발생하는데 지연되는 시간값을 주는 것 */
+        div:nth-child(1){transition: 1s;}
+        div:nth-child(2){transition: .5s;}
+        div:nth-child(3){transition: 3s;}
+
+                p{
+            border :1px solid;
+            height : 35px;
+            width:200px;
+            box-sizing: border-box;
+        }
+        p>input[type="text"]{
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            outline:none;
+            border:0;
+            font-size : 1.3rem;
+            padding-left:10px;
+            box-sizing: border-box;
+        }
+        p>span{
+            display:block;
+            width:0;
+            height:1px;
+            background-color: lightgray;
+            background :linear-gradient(to right , red,orange,yellow,green);
+            /* transition:1s; */
+        }
+        /* input 창에 포커스(클릭)맞췄을 때 span의 속성을 아래로 해주세요 */
+          p>input[type="text"]:focus+span{
+            width:100%;
+            /* 왼쪽을 향해서 아래의 색깔들을 순서대로 그라데이션을 주세요 from right go to left */
+            background :linear-gradient(to right , red,orange,yellow,green);
+            transition: 1s;;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <hr/>
+    <p>
+        <input type="text">
+        <span></span>
+    </p>
+</body>
+</html>

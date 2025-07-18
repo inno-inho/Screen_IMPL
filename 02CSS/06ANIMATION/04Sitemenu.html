@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{margin: 0;}
+        .sitemenu{
+            padding: 20px;
+            
+            /* position하는 이유 뒷배경이 유지되어야 해서 */
+            position: relative;
+        }
+            
+
+
+        .sitemenu>input[type = "checkbox"]{
+            display: none;
+        }
+        .sitemenu>label{}
+        /* 3선 부분 */
+        .sitemenu>label>span{
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: black;
+            margin: 8px;
+
+            transition: .3s;
+        }
+
+        /* 체크박스에 체크가 됬을 때 라벨의 n번째 요소에 변화를 주겠다 */
+
+        /* 첫번째 줄 밑으로 (회전)기울어지세요 */
+        .sitemenu>input[type = "checkbox"]:checked+label>span:nth-child(1){
+            transform: translate(0px, 10px) rotate(45deg);
+        }
+
+        /* 두 번째 줄 투명도 0이 되세요(없어지세요) */
+        .sitemenu>input[type = "checkbox"]:checked+label>span:nth-child(2){
+            opacity: 0;
+        }
+        
+        /* 세 번째 줄 위로 (회전)기울어지세요 */
+        .sitemenu>input[type = "checkbox"]:checked+label>span:nth-child(3){
+            transform: translate(0px, -10px) rotate(-45deg);
+        }
+        /* 체크되면 바로 밑에 메뉴를 띄우겠다 */
+        /* ~는 동위선택자를 많이 선택할때 site-block까지 전부 선택하겠다 */
+        
+        .site-block{
+            width: 0; 
+            height: 0;
+            margin-top: 25px;  
+            position: absolute;
+        }
+
+        .sitemenu>input[type = "checkbox"]:checked~.site-block{
+            width: 95%; 
+            height: 500px;
+            border: 1px solid;
+        }
+
+
+    </style>
+</head>
+<body>
+     <div class="sitemenu">
+        <input type="checkbox" id="chk">
+        <!-- 3선 메뉴바 부분 -->
+        <label for="chk">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="site-block">
+
+        </div>
+    </div>
+
+</body>
+
+   

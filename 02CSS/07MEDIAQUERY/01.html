@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{height: 150px;background-color: orange;}
+
+        /* 태블릿 가로 */
+        /* 화면 최대넓이를 1024px로 하겠다-> 1024보다 작아지면 밑의 걸로 하겠다 */
+        @media screen and (max-width: 1024px){
+            div{height: 120px;background-color: green;}
+        }
+
+        /* 모바일 세로 */
+        @media screen and (max-width: 480px){
+            div{height: 70px;background-color: hotpink;}
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         .parent {
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid;
+        }
+
+        .parent>.son {
+            width: 150px;
+            height: 150px;
+            border: 1px solid;
+            background-color: orange;
+            transition: 1s;
+        }
+        /* parent에 마우스를 갖다댔을 때 자식속성*/
+        .parent:hover .son{
+            /* 위치이동 x축으로 400px, y축으로 400px*/
+            /* transform: translate(400px, 400px); */
+            /* transform: translateX(400px); */
+            /* transform: translateY(400px); */
+
+            /* 크기 조정 2.5배 커져라 */
+            /* transform: scale(2.5); */
+
+            /* 회전 45도 회전해라 */
+            /* transform: rotate(45deg); */
+
+            /* 기울이기 45도 기울어져라 */
+            /* transform: skew(45deg); */
+
+            /* 동시적용 한칸 띄우고 입력하면 가능 */
+            transform: translate(500px, 500px) rotate(360deg) scale(1.5);
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+
+</body>
+</html>
