@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <button onclick="GF.sound()">어이</button> -->
+
+    <hr/>
+
+    <h1>My car</h1>
+    <!-- 여기에 입력하고 저장하기 누르면 Mycar속성에 저장되게 할거야 -->
+    소유자 : <input id = "owner" /><br/>
+    차량 : <input id = "cat"/><br/>
+    연료타입 : <input id = "fuelType"/><br/>
+    <button id = "save">저장하기</button>
+
+    <hr/>
+    <button onclick="myCar.accel()">가속</button>
+    <button onclick = "myCar.break()">감속</button>
+    <button onclick="myCar.toString()">상태 확인</button>
+    <h2>대시보드</h2>
+    <div id = "gauge" style=" transition: 0.5s; height: 50px; width: 0; background-color: hotpink;"></div>
+
+
+    <script>
+
+        const myCar = {
+            // 속성
+            owner : "",
+            cat : "",
+            fuelType : "",
+            speed : 0,
+            fuelAmout : 100,
+            // 기능
+            // 가속 기능
+            accel: function(){
+                this.speed = this.speed + 10;
+                console.log("가속처리완료 현재속도 : ", this.speed);
+                
+                const gaugeEl = document.getElementById('gauge');
+                gaugeEl.style.width = `${this.speed * 2}px`;
+            },
+            break: function(){
+                this.speed = this.speed - 10;
+                console.log("감속처리완료 현재속도 : " , this.speed);
+
+                const gaugeEl = document.getElementById('gauge');
+                gaugeEl.style.width = `${this.speed * 2}px`;
+            },
+
+            // toString이라는 함수 지정?
+            toString:function(){
+                console.log(this.owner, this.cat, this.fuelType, this.speed, this.fuelAmout);
+            }
+        }
+
+        // save 버튼을 찾기
+        const saveBtn = document.getElementById('save');
+        // saveBtn에 대한 이벤트 생성 -> click을 하면 아래의 코드를 실행
+        saveBtn.addEventListener('click', ()=>{
+            // console.log('save btn clicked..');
+            // ownerInputEl,catInputEl,fuleTypeInputEl이라는 변수에 owner,cat,fueltype에 입력된 값을 저장
+            const ownerInputEl = document.getElementById('owner');
+            const catInputEl = document.getElementById('cat');
+            const fuleTypeInputEl = document.getElementById('fuelType');
+            // console.log('save btn clicked..', ownerInputEl.value, catInputEl.value, fuleTypeInputEl.value);
+            // ownerInputEl,catInputEl,fuleTypeInputEl에 저장된값을 mycar 속성에 저장
+            myCar.owner = ownerInputEl.value;
+            myCar.cat = catInputEl.value;
+            myCar.fuelType = fuleTypeInputEl.value;
+            console.log('save btn clicked.. myCarInfo : ',myCar);
+        });
+
+        // object : 사물 > 객체(주체를 제외한 모든 대상)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        const GF  = 
+        {
+            // 속성
+            name : "helen",
+            kind : "female",
+            age : 27,
+            weight : "?",
+            // 기능
+            // GF의 sound 기능 정의
+            sound:function(){
+                alert(this.name + "이 부릅니다")
+            },
+            toString:function(){
+                console.log(this.name, this.kind, this.age, this.weight);
+            }
+        }
+
+        //
+
+        console.log(GF);
+        console.log(GF. name);
+        console.log(GF. age);
+        console.log(GF. kind);
+
+        // GF의 sound 기능 쓰는 법
+        // GF.sound();
+        // GF.name = '이노';
+        // GF.toString();
+
+    </script>
+
+</body>
+</html>

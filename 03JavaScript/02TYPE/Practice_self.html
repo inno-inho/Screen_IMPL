@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label>국어점수 : </label>
+        <input class="korea" type="number" name="국어"><button style="display: none;" ></button>
+    </div>
+    <div>
+        <label>영어점수 : </label>
+        <input class="english" type="number" name="영어"><button button style="display: none;" ></button>
+    </div>
+    <div>
+        <label>수학점수 : </label>
+        <input class="math" type="number" name="수학"><button button style="display: none;" ></button>
+    </div>
+    <button id = "save">저장</button>
+
+    <button id = "sumBtn">총합</button>
+
+    <button id = "averBtn">평균</button>
+
+
+    <script>
+        const myScore = {
+            //속성
+            국어 : "",
+            영어 : "",
+            수학 : "",
+            총합 : "",
+            평균 : "",
+
+            save국어:function(){
+                const 국어input = document.querySelector(`.korea`);
+                this.국어 = Number(input.koreaInput);
+            },
+
+             save수학:function(){
+                const 수학input = document.querySelector(`.math`);
+                this.수학 = Number(input.mathInput);
+            },
+
+             save영어:function(){
+                const 영어input = document.querySelector(`.english`);
+                this.영어 = Number(input.englishInput);
+            },
+
+            // 기능
+            sum: function(){
+                this.총합 = this.국어 + this.수학 + this.영어;
+                console.log("총합은", this.총합);
+            },
+
+            aver: function(){
+                this.평균 = (this.국어 + this.수학 + this.영어)/3;
+                console.log("평균은", this.평균);
+            },
+
+        };
+
+        // 저장 버튼 설정
+        const saveBtn = document.getElementById('save');
+        saveBtn.addEventListener('click',()=>{
+            // console.log('save..');
+            const koreaInput = document.querySelector('.korea');
+            const englishInput = document.querySelector('.english');
+            const mathInput = document.querySelector('.math');
+
+            myScore.국어 = Number (koreaInput.value);
+            myScore.영어 = Number (englishInput.value);
+            myScore.수학 = Number (mathInput.value);
+            console.log('save myScoreInfo: ', myScore);
+
+        });
+        // 덧셈 버튼
+        const saveSumBtn = document.getElementById('sumBtn');
+        saveSumBtn.addEventListener('click', () =>
+            {
+                myScore.sum();
+            });
+        // 총합 버튼
+        const saveAverBtn = document.getElementById('averBtn');
+        saveAverBtn.addEventListener('click',()=>
+        {
+            myScore.aver();
+        });
+            
+
+    </script>
+</body>
+</html>

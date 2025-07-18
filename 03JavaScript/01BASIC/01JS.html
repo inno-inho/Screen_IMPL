@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- on이하의 속성은 자바 alert는 경고창(버튼 누르면 나오는 거)-->
+    <button onclick="alert('Hello world')">BTN1</button>
+    <button onclick = "alert(30 + 2)">BTN2</button>
+    <!-- 띄워쓰기 \n -->
+    <button onclick="alert('Helloworld\n Helloworld\n Helloworld')">BTN3</button>
+
+    <hr/>
+    <!-- a태그에 자바스크립트 이벤트 속성을 쓸려면 이하와 같이 쓰기 -->
+    <a href="javascript:alert('Hello world')">BTN1</a> <br/>
+    <a href="javascript:alert(30 + 2)">BTN2</a> <br/>
+    <!-- console.log는 개발자도구의 console창에 담아뒀던 객체의 정보를 표시해주는거 -->
+    <a href="javascript:console.log(obj)">BTN3</a> <br/>
+
+
+
+    
+
+    <!-- script는 문서 최하단에 작성 -->
+    <script>
+        const obj = {"name": "이노", "age": "30", "addr": "대구"};
+        // {}는 자바스크립트에서 객체를 담는 곳
+    </script>
+    
+</body>
+</html>
