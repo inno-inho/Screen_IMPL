@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class = "chk-block">
+        <input type="checkbox" id = "chk">
+        <label for="chk">체크박스</label>
+    </div>
+
+
+    <script>
+        const chkEl = document.querySelector('#chk');
+        chkEl.addEventListener('change', (e) => {    // 체크박스가 바뀌면(change),  change를 쓸 수 있는 속성들 : checkbox, radio, file, textarea, select ...
+            console.log("change...", e.target.checked)      // 체크되었을 때의 반응
+
+            if(e.target.checked)
+            {
+                // 체크되었을 때 처리로직
+                
+                document.querySelector('.chk-block label').style.color = "green";      // chk-block안의 라벨 위치 저장 -> 컬러변경
+
+            } 
+            else
+            {
+                // 미체크시 처리로직
+
+                document.querySelector('.chk-block label').style.color = "black";       // chk-block안의 라벨 위치 저장 -> 컬러변경
+
+
+            }
+
+            
+        })      
+        
+        
+    
+    </script>
+
+</body>
+</html>
