@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 구글 아이콘 -->
+    <!-- 200&icon_names=pause가 뒤에 붙으면 이 이미지 링크밖에 못씀 -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48;
+
+                font-size: 2.5rem;
+                border: 1px solid;
+                border-radius: 50%;    
+            }
+    </style>
+
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        *{}
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {}
+
+        .wrapper>header {}
+
+        .wrapper>main {}
+
+        .wrapper>main>section {}
+
+
+
+        .wrapper>main>section.banner>.swiper {
+            /* 가져올 img의 세로크기가 720이기 때문에 */
+            min-height: 720px;
+            position: relative;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper {
+            height: 100%;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide {
+            height: 100%;
+        }
+
+        .swiper-pagination-bullet {
+            /* 페이지 수 확인가능하게 하는 동그라미의 클래스 이름 */
+            /* 개발자 페이지에서 그 부분 찍어서 확인 가능 */
+
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            transition: .3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+
+        }
+
+        .swiper-pagination {
+            color: white;
+            font-size: 1.3rem;
+            position: absolute;
+
+            left: 15.625vw;
+            top: 80%;
+
+            width: 300px;
+
+            letter-spacing: 3px;
+
+        }
+
+        .swiper-pagination-current {
+            color: royalblue;
+        }
+
+        .swiper-pagination-total {}
+
+
+        /* 스크롤 버튼 디자인 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+
+            /* border: 1px solid white; */
+            border-radius: 50%;
+
+            position: absolute;
+            top: 80%;
+
+        }
+
+        .swiper-button-next {
+            left: calc(15.625vw + 180px);
+        }
+
+        .swiper-button-prev {
+            left: calc(15.625vw + 65px);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .start-stop-toggle{
+            z-index: 100;
+            
+            position: absolute;
+            top: 80%;
+            left: calc(15.625vw + 10px);
+            
+            cursor: pointer;
+
+            color: white;
+
+            
+
+        }
+
+
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <header></header>
+        <main>
+            <section class="banner">
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            Slide 1
+                            <a href="javascript:void(0)">
+                                <img src="./images/1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            Slide 2
+                            <a href="javascript:void(0)">
+                                <img src="./images/2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            Slide 3
+                            <a href="javascript:void(0)">
+                                <img src="./images/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">Slide 4
+                            <a href="javascript:void(0)">
+                                <img src="./images/4.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+
+                    <!-- Start/Stop button -->
+                    <div class = "start-stop-toggle">
+                        <span class = "material-symbols-outlined">
+                            <!-- pasue -->
+                             <!-- play 버튼 추가 -->
+                             play_arrow        
+                        </span>
+                    </div>
+
+
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+
+
+
+    <script>
+
+        const swiperBanner = new Swiper('.wrapper>main>section.banner>.swiper', {
+
+            direction: 'horizontal',  // horizontal(수평,slide), vertical(수직 slide)
+            autoplay: {          // 자동플레이
+                delay: 2000,         // 한 이미지당 2초씩 딜레이
+                // pauseOnMouseEnter: true,   // 마우스 갖다대면 멈춰라
+            },
+
+            loop: true,
+
+            effect: "slide", // slide(기본), fade, scroll, cube, coverflow, flip
+            // mousewheel: true,      // 마우스 휠 돌리면 슬라이딩 되게 하는 거
+
+            // // If we need pagination -> 몇 페이지인지 표시해주는 기능
+            pagination: {
+                el: '.wrapper>main>section.banner>.swiper .swiper-pagination',
+                clickable: true,    // 동그라미 클릭 가능하게
+                type: 'fraction'     // bullets(기본), fraction, progrssbar
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.wrapper>main>section.banner>.swiper .swiper-button-next',     // swiper안에 swiper-button-next인거를 확실히 하기위해
+                prevEl: '.swiper-button-prev',
+            },
+
+            // // And if we need scrollbar  
+            // scrollbar: {
+            // el: '.swiper-scrollbar',
+            // },
+
+        });
+
+        // 토글버튼 만들기
+
+        const playPauseBtn = document.querySelector('.start-stop-toggle span');
+        
+        let isPlaying = true;       
+        
+
+        playPauseBtn.addEventListener('click', () => {
+            if(isPlaying){
+                playPauseBtn.innerHTML = "pause";
+                swiperBanner.autoplay.stop();
+                isPlaying = false;  // 바뀐다음에 다시 누르면 바뀌어야하니(2번째 클릭을 위해서)
+            }else{    
+                playPauseBtn.innerHTML = "play_arrow";
+                swiperBanner.autoplay.start();
+                isPlaying = true;
+            }    
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
