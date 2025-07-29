@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./경찰청지역별범죄발생건수.js"></script>
+
+</head>
+<body style="display:flex;justify-content: center;align-items: center;height:100vh;">
+
+    <div style="width:800px;height:500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    
+
+
+    <script>
+
+        console.log(지역별범죄건수);                // ./경찰청지역별범죄발생건수.js의 데이터를 지역별범죄건수라는 이름으로 저장해놓음 -> 파일에 가보면 해놨음
+
+
+        const result =
+        지역별범죄건수.reduce((resultObject, item) => {
+            const {범죄대분류, 범죄중분류, ...rest} = item;         // 구조분해 할당    지역별범죄건수에 있는 데이터를 하나씩 분류? rest는 나머지들(대분류와 중분류)
+            const values = Object.values(rest);
+            const item_sum = values.reduce((sum, count) => {return sum + count}, 0);
+
+            console.log(범죄대분류, values);
+            // const 범죄대분류 = item.범죄대분류;     // 지역별 범죄건수에 있는 범죄대분류 항목만 골라서 변수에 저장
+            
+            // return (범죄대분류, values);
+            if(resultObject[범죄대분류] === !undefined){
+                resultObject[범죄대분류] += item.sum;
+            }else{
+                // 처음 누적
+                resultObject[범죄대분류] = item.sum;
+            }
+            return resultObject;
+        },{})          
+        
+        console.log(result);
+
+
+        // 그래프 그리기
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'bar'
+        })
+
+    </script>
+
+
+</body>
+</html>

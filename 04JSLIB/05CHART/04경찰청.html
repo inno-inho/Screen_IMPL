@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./경찰청지역별범죄발생건수.js"></script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+    <script>
+        
+//    console.log("ALL DATA", 중구맛집);
+//         //
+//         const datas = 중구맛집.data;
+//         console.log("datas", datas);
+
+//         //카테고리별 맛집 count 
+//         const cat_count = datas.map((item) => { return item.FD_CS }) //['한식','중식','한식','한식',...]
+//             .reduce((cat, item) => {
+//                 if (cat[item] !== undefined)
+//                     cat[item]++;
+//                 else
+//                     cat[item] = 1;
+//                 return cat;
+//             }, {}) //{한식:100,일식:55}
+
+//         console.log(cat_count);
+
+
+
+
+        // console.log("데이터 확인", 지역별범죄건수);
+        
+        const datas = 지역별범죄건수;
+        // console.log("datas", datas);
+
+        // 범죄 카테고리별 카운트
+        const catCategory = datas.map((item) => {return item.범죄대분류 })
+            .reduce((cat, item) => {
+                if (cat[item] !== undefined)
+                    cat[item]++;
+                else
+                    cat[item] = 1;
+                return cat;
+            }, {}) 
+
+        console.log(catCategory);
+        
+
+       
+    </script>
+
+</body>
+</html>
