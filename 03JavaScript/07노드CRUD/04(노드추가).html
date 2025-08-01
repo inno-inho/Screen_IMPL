@@ -168,7 +168,7 @@
             function isvalid(text){
                 const regex = /^[0-9]/ ;        // 0-9까지의 숫자
                 // 공백여부 확인
-                if(text.trim() === ''|text.trim() === null){        // .trim은 앞 뒤 공백을 제거하는 함수
+                if(text.trim() === ''||text.trim() === null){        // .trim은 앞 뒤 공백을 제거하는 함수
                     alert("내용을 입력하세요");
                     return false;
                 }
